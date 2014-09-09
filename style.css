@@ -1,6 +1,6 @@
 /* RESETS */
 
-html, body, header, footer, main, h1, h3, p, article, section, img {
+html, body, header, footer, main, h1, h3, p, article, section, img, a {
 	padding: 0;
 	margin: 0;
 	border: 0;
@@ -33,10 +33,39 @@ header {
 	color: #F5CD4F;
 }
 
+.header-nav {
+	width: 1200px;
+	margin: auto;
+}
+
+.header-nav > a {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	font-size: 26px;
+	display: block;
+	float: left;
+	margin: 18px 95px;
+}
+
+.header-nav > a.active {
+	color: #fff;
+}
+
 /* MAIN STYLES */
 
 .main-content {
 	padding-top: 100px;
+	padding-bottom: 200px;
+}
+
+.anchor {
+	position: relative;
+	bottom: 100px;
+}
+
+.anchor#about {
+	bottom: 70px;
 }
 
 section.intro {
@@ -148,7 +177,7 @@ article.project {
 	height: 100%;
 }
 
-img.chess {
+.project > a > img.chess {
 	height: 270px;
 }
 

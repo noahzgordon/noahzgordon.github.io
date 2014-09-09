@@ -4,13 +4,25 @@
 		<meta charset="utf-8">
 		<title>NZG - Web Developer for Hire</title>
 		<link rel="stylesheet" href="style.css">
+		<script src="jquery-1.11.1.min.js" 
+			type="text/javascript" 
+			charset="utf-8">
+		</script>
 	</head>
 	
 	<body>
 		<header>
+			<nav class="header-nav group">
+				<a href="#intro">Intro</a>
+				<a href="#projects">Projects</a>
+				<a href="#about">About Me</a>
+				<a href="#contact">Contact Me</a>
+			</nav>
 		</header>
 		
 		<main class="main-content group">
+			<div id="intro" class="anchor"></div>
+				
 			<section class="intro">
 				<article class="short-desc">
 					<p>Hey there! My name's Noah.</p>
@@ -24,6 +36,8 @@
 				<a class="linkedin" href="http://www.linkedin.com/in/noahzgordon/"></a>
 				<a class="email" href="mailto:tortuga.ng@gmail.com"></a>
 			</section>
+			
+			<div id="projects" class="anchor"></div>
 			
 			<section class="projects group">
 				<h1>Recent Projects</h1>
@@ -67,14 +81,16 @@
 				</article>
 			</section>
 			
+			<div id="about" class="anchor"></div>
+			
 			<section class="about-me group">
 				<article class="text-wrapper">
 					<h1>About Me</h1>
 					<p>I've had a passion for the web since I first heard a modem dial-up at the age of six. Since then I've come to find immense satisfaction in crafting web applications and executing my visions for them.</p>
 					<p>My experience includes work with Ruby on Rails, RSpec, Backbone.js, node.js, HTML5, Sass and Git, among other technologies. I'm a quick learner always eager to pick up new skills.</p>
 					<p>In my off-time you can find me working on personal projects, watching cartoons with my awesome girlfriend, or playing nerdy games with my nerdy friends.</p>
-				</section>
-			<article class="text-wrapper">
+				</article>
+			</section>
 			
 			<section class="contact">
 			</section>
@@ -86,8 +102,39 @@
 	</body>
 </html>
 
-<!-- Absolute bare minimum Google Analytics -->
+<!-- Active navbar links, code borrowed in part from Rishabh @ http://codetheory.in/change-active-state-links-sticky-navigation-scroll/ -->
+<script>
+	var $anchors = $('.anchor'), 
+			$nav = $('nav')
+ 
+	$(window).on('scroll', function () {
+	  var cur_pos = $(this).scrollTop();
+ 
+	  $anchors.each(function() {
+			var $section = $($(this).next("section"))
+			console.log(this, $section)
+	    var top = $(this).offset().top;
+	    var bottom = top + $section.outerHeight();
+ 
+	    if (cur_pos >= top && cur_pos <= bottom) {
+	      $nav.find('a').removeClass('active');
+ 
+	      $nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
+	    }
+	  });
+	});
+</script>
 
+<script>
+	$('.header-nav > a').click(function(event){
+		event.preventDefault();
+    $('html, body').animate({
+      scrollTop: $( $.attr(this, 'href') ).offset().top
+    }, 500);
+	});
+</script>
+
+<!-- Absolute bare minimum Google Analytics -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
