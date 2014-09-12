@@ -1,0 +1,58 @@
+/* RESETS */
+
+html, body, section, article, ul, li, h1, h2, h3, p, a {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	font: inherit;
+}
+
+h1, h2, h3, p, a, li {
+	font-family: Verdana, sans-serif;
+	text-decoration: none;
+}
+
+ul, li {
+	list-style: none;
+}
+
+/* CLEARFIX */
+
+.group:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/* STYLES */
+
+body {
+	width: 800px;
+	height: 1050px;
+	margin: auto;
+	border-left: 1px solid #000;
+}
+
+.head {
+	background: #647FAC;
+	color: #F5CD4F;
+}
+
+.head > h1 {
+	padding-top: 10px;
+	font-size: 34px;
+	font-weight: thin;
+	text-align: center;
+}
+
+.contact {
+	width: 682px;
+	margin: auto;
+}
+
+.contact > li {
+	display: block;
+	float: left;
+	color: #000;
+	margin: 10px 30px;
+}
