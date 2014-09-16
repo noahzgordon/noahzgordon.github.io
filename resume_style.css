@@ -27,7 +27,8 @@ ul, li {
 /* STYLES */
 
 body {
-	width: 800px;
+	max-width: 800px;
+	width: 100%;
 	height: 1050px;
 	margin: auto;
 	border-left: 1px solid #000;
